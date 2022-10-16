@@ -9,20 +9,20 @@ from pocsuite3.api import (
 
 
 class SCrcePOC(POCBase):
-    vulID = "1571"  # ssvid ID 如果是提交漏洞的同时提交 PoC,则写成 0
+    vulID = "1571"  # ssvid 
     version = "1"  # 默认为1
     author = "xans"  # PoC作者的大名
-    vulDate = "2022-04-27"  # 漏洞公开的时间,不知道就写今天
+    vulDate = "2022-04-27"  # 漏洞公开的时间
     createDate = "2022-10-16"  # 编写 PoC 的日期
-    updateDate = "2022-10-16"  # PoC 更新的时间,默认和编写时间一样
-    references = ["https://www.exploit-db.com/exploits/50948"]  # 漏洞地址来源,0day不用写
+    updateDate = "2022-10-16"  # PoC 更新的时间
+    references = ["https://www.exploit-db.com/exploits/50948"]  # 漏洞地址来源
     name = "Telesquare SDT-CW3B1   rce 远程命令PoC"  # PoC 名称
     appPowerLink = ""  # 漏洞厂商主页地址
     appName = "SDT-CW3B1"  # 漏洞应用名称
     appVersion = "1.1.0"  # 漏洞影响版本
     vulType = VUL_TYPE.CODE_EXECUTION  # 漏洞类型,类型参考见 漏洞类型规范表
     category = POC_CATEGORY.EXPLOITS.WEBAPP
-    samples = []  # 测试样列,就是用 PoC 测试成功的网站
+    samples = []  # 测试样列
     install_requires = []  # PoC 第三方模块依赖，请尽量不要使用第三方模块，必要时请参考《PoC第三方模块依赖说明》填写
     desc = """
                Telesquare SDT-CW3B1是韩国Telesquare公司的一款无线路由器。
@@ -53,7 +53,7 @@ class SCrcePOC(POCBase):
 
     def _verify(self):
         result = {}
-        res = self._check()  # res就是返回的结果列表
+        res = self._check()  
         if res:
             result['VerifyInfo'] = {}
             result['VerifyInfo']['Info'] = self.name
